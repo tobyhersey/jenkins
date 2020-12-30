@@ -12,5 +12,11 @@ pipeline {
       }
     }
 
+    stage('s3 ls') {
+      steps {
+        sh 'aws s3 ls'
+      }
+    }
+
   }
 }
