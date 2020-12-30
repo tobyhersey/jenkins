@@ -14,4 +14,5 @@ pipeline {
       }
    }
 }
-// create folder and add library call mail_list , import as above https://github.com/darealmc/shredlib.git
+// create folder and add library call mail_list , import as above https://github.com/darealmc/shredlib.git or setup as global library
+// and remove local import which overrites
