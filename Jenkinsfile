@@ -6,7 +6,7 @@ pipeline {
 
   }
   stages {
-    stage('') {
+    stage('docker run') {
       steps {
         sh 'docker run --rm hello-world'
       }
