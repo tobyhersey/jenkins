@@ -18,5 +18,11 @@ pipeline {
       }
     }
 
+    stage('terraform') {
+      steps {
+        sh 'terraform -v'
+      }
+    }
+
   }
 }
