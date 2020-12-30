@@ -1,0 +1,37 @@
+pipeline {
+    agent {
+        label 'worker'
+    }
+
+    stages {
+        stage("build and test the project node latest") {
+          agent {
+                  docker {  image 'node:latest'
+                            label 'worker' 
+                        }
+                }
+            stages {
+               stage("build") {
+                   steps {
+                       sh "node --version"
+                   }
+               }
+               stage("test") {
+                   steps {
+                       sh "echo hello"
+                   }
+               }
+            }
+        }
+        stage("set node version to 12.16.2") {
+            agent {
+                    docker {  image 'node:12.16.2'
+                              label 'worker' 
+                            }
+                }
+            steps {
+                sh "node --version"
+            }
+        }
+    }
+}
