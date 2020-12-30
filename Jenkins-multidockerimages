@@ -11,14 +11,9 @@ pipeline {
                         }
                 }
             stages {
-               stage("build") {
+               stage("docker latest") {
                    steps {
                        sh "node --version"
-                   }
-               }
-               stage("test") {
-                   steps {
-                       sh "echo hello"
                    }
                }
             }
@@ -35,3 +30,4 @@ pipeline {
         }
     }
 }
+//requires more than 1 executor
