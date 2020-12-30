@@ -18,11 +18,18 @@ pipeline {
       }
     }
 
-    stage('terraform') {
+    stage('terraform apply') {
       steps {
         sh '''terraform init && \\
 terraform plan && \\
 terraform apply -auto-approve'''
+      }
+    }
+
+    stage('manual prompt before destroy') {
+      steps {
+        waitUntil()
+        input 'proceed to destroy?'
       }
     }
 
