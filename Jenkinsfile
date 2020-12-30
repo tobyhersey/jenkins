@@ -26,10 +26,9 @@ terraform apply -auto-approve'''
       }
     }
 
-    stage('manual prompt before destroy') {
+    stage('manual b4 destory') {
       steps {
-        waitUntil()
-        input 'proceed to destroy?'
+        input 'want to destroy?'
       }
     }
 
