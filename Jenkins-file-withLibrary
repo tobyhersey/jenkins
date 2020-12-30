@@ -1,0 +1,17 @@
+@Library('mail_list') _
+
+pipeline {
+   agent any
+
+   stages {
+      stage('build it') {
+         steps {
+             script{
+                mail = new emails()
+                mail.mails.each {println "name: $it.key , email: $it.value"}
+             }
+         }
+      }
+   }
+}
+// create folder and add library call mail_list , import as above https://github.com/darealmc/shredlib.git
