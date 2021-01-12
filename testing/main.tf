@@ -22,7 +22,7 @@ data "aws_ami" "ubuntu" {
 
 
 
-
+#
 
 # resource "aws_subnet" "tf_test_subnet" {
 #   vpc_id                  = "vpc-09304116708eea386" 
